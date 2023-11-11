@@ -35,6 +35,8 @@ struct ContentView: View {
     @State var minute: Int = 0
     @State var second: Int = 0
     
+    @State var showSecond: Bool = true
+    
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
@@ -61,14 +63,16 @@ struct ContentView: View {
                         minuteShowType.toggle()
                     }
                     
-                    NumberView(num: second,
-                               type: secondType,
-                               showType: secondShowType)
-                    .onTapGesture {
-                        secondTypeNeedChange = true
-                    }
-                    .onLongPressGesture {
-                        secondShowType.toggle()
+                    if showSecond {
+                        NumberView(num: second,
+                                   type: secondType,
+                                   showType: secondShowType)
+                        .onTapGesture {
+                            secondTypeNeedChange = true
+                        }
+                        .onLongPressGesture {
+                            secondShowType.toggle()
+                        }
                     }
                 }
                 .minimumScaleFactor(0.05)
@@ -104,7 +108,9 @@ struct ContentView: View {
                     .foregroundStyle(.white)
                     .font(.custom("PixeloidSans-Bold", size: 20))
             }
-        }
+        }.onTapGesture(count: 2, perform: {
+            showSecond.toggle()
+        })
     }
 }
 
