@@ -13,6 +13,8 @@
 		4529B1D42AFF6F7600DA9353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4529B1D32AFF6F7600DA9353 /* Assets.xcassets */; };
 		4529B1D82AFF6F7600DA9353 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4529B1D72AFF6F7600DA9353 /* Preview Assets.xcassets */; };
 		4529B1DF2AFF77E500DA9353 /* PixeloidSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4529B1DE2AFF77E100DA9353 /* PixeloidSans-Bold.ttf */; };
+		4529B1E32AFFE4C200DA9353 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B1E22AFFE4C200DA9353 /* NumberView.swift */; };
+		4529B1E52AFFE53E00DA9353 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B1E42AFFE53E00DA9353 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		4529B1D72AFF6F7600DA9353 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4529B1DE2AFF77E100DA9353 /* PixeloidSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PixeloidSans-Bold.ttf"; sourceTree = "<group>"; };
 		4529B1E12AFF799800DA9353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4529B1E22AFFE4C200DA9353 /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
+		4529B1E42AFFE53E00DA9353 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				4529B1D32AFF6F7600DA9353 /* Assets.xcassets */,
 				4529B1D52AFF6F7600DA9353 /* AnyClock.entitlements */,
 				4529B1D62AFF6F7600DA9353 /* Preview Content */,
+				4529B1E22AFFE4C200DA9353 /* NumberView.swift */,
+				4529B1E42AFFE53E00DA9353 /* Utils.swift */,
 			);
 			path = AnyClock;
 			sourceTree = "<group>";
@@ -157,9 +163,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4529B1E52AFFE53E00DA9353 /* Utils.swift in Sources */,
 				4529B1D02AFF6F7400DA9353 /* ContentView.swift in Sources */,
 				4529B1D22AFF6F7400DA9353 /* Item.swift in Sources */,
 				4529B1CE2AFF6F7400DA9353 /* AnyClockApp.swift in Sources */,
+				4529B1E32AFFE4C200DA9353 /* NumberView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,9 +308,11 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -338,9 +348,11 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
