@@ -2,6 +2,22 @@
 <div style="display: flex; justify-content: space-between; flex:8">
 <h1 align="left">AnyClock 任意钟</h1>
 
+<div align="left">
+<img src="https://img.shields.io/static/v1?label=Awesome&message=Project&style=for-the-badge&color=blue&logo=glass" alt="Awesome Badge"/>
+
+<a href="https://jq.qq.com/?_wv=1027&k=8Z9w4LGN"><img src="https://img.shields.io/badge/QQ%20Group-join-black?style=for-the-badge&logo=linux" alt="Join Community Badge"/></a>
+<br>
+
+<i>随意始，随意钟。</i>
+
+<a href="https://github.com/W-Mai/AnyClock/stargazers"><img src="https://img.shields.io/github/stars/W-Mai/AnyClock?style=for-the-badge&" alt="Stars Badge"/></a>
+<a href="https://github.com/W-Mai/AnyClock/network/members"><img src="https://img.shields.io/github/forks/W-Mai/AnyClock?style=for-the-badge&" alt="Forks Badge"/></a>
+<a href="https://github.com/W-Mai/AnyClock/issues"><img src="https://img.shields.io/github/issues/W-Mai/AnyClock?style=for-the-badge&" alt="Issues Badge"/></a>
+<a href="https://github.com/W-Mai/AnyClock/blob/master/LICENSE"><img src="https://img.shields.io/github/license/W-Mai/AnyClock?color=2b9348&style=for-the-badge&" alt="License Badge"/></a>
+
+</div>
+</div>
+
 <img src="snapshots/snapshot.png">
 
 ## 介绍
