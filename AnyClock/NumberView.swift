@@ -9,13 +9,26 @@ import SwiftUI
 
 struct NumberView: View {
     var num: Int = 0
+    var type: RandomType = .binary
+    var showType: Bool = false
     
     var body: some View {
-        Text(convertNum(num:num, index: Int.random(in: 1...5)))
-            .foregroundStyle(.white)
-            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-            .font(.custom("PixeloidSans-Bold", size: 200))
-            .minimumScaleFactor(0.5)
+        ZStack(alignment: .bottomTrailing){
+            VStack {
+                Text(convertNum(num:num, type: type))
+                    .foregroundStyle(.white)
+                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                    .font(.custom("PixeloidSans-Bold", size: 200))
+            }
+            .padding(8)
+            
+            if showType {
+                Text("\(type.rawValue)")
+                    .foregroundStyle(.gray)
+                    .font(.custom("PixeloidSans-Bold", size: 16))
+            }
+        }
+//        .aspectRatio(1, contentMode: .fill)
     }
 }
 

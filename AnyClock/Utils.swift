@@ -7,6 +7,15 @@
 
 import Foundation
 
+enum RandomType: String {
+    case binary     = "'b"
+    case octal      = "'o"
+    case hex        = "'x"
+    case decimal    = "'d"
+    case roman      = "'r"
+    case random     = "'?"
+}
+
 func convertToRoman(_ number: Int) -> String {
     let romanValues: [(value: Int, symbol: String)] = [
         (1000, "M"),
@@ -49,32 +58,35 @@ func getLocalTime(date: Date) -> DateComponents {
     return components
 }
 
-func convertNum(num: Int, index: Int) -> String {
-    switch index {
-    case 0:
+func choice<T>(_ arr: [T]) -> T {
+    return arr.randomElement()!
+}
+
+func convertNum(num: Int, type: RandomType) -> String {
+    switch type {
+        
+    case .binary:
         // convert to binary
         let binary = String(num, radix: 2)
         return binary
-    case 1:
+    case .octal:
         // convert to octal
         let octal = String(num, radix: 8)
         return octal
-    case 2:
+    case .hex:
         // conver to hex
         let hex = String(num, radix: 16)
         return hex
-    case 3:
+    case .decimal:
         return String(num)
-    case 4:
+    case .roman:
+        // convert to roman
+        let roman = convertToRoman(num)
+        return roman
+    case .random:
         // convert to random num
         let offset = Int.random(in: 0..<10)
         let random = num + offset
         return String(random)
-    case 5:
-        // convert to roman
-        let roman = convertToRoman(num)
-        return roman
-    default:
-        return ""
     }
 }
