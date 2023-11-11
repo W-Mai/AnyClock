@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AppIntents
 
 enum RandomType: String {
     case binary     = "'b"
@@ -14,6 +15,19 @@ enum RandomType: String {
     case decimal    = "'d"
     case roman      = "'r"
     case random     = "'?"
+}
+
+enum ClockNumberType: String, AppEnum {
+    case hour, minute, second, timestamp
+    
+    static var typeDisplayRepresentation: TypeDisplayRepresentation = "显示类型"
+    
+    static var caseDisplayRepresentations: [ClockNumberType : DisplayRepresentation] = [
+        .hour: "小时",
+        .minute: "分钟",
+        .second: "秒钟",
+        .timestamp: "时间戳"
+    ]
 }
 
 func convertToRoman(_ number: Int) -> String {
@@ -88,5 +102,39 @@ func convertNum(num: Int, type: RandomType) -> String {
         let offset = Int.random(in: 0..<10)
         let random = num + offset
         return String(random)
+    }
+}
+
+func getRandomNumberTpyeByTimestamp(type: ClockNumberType) -> RandomType {
+    var timestamp = Int(Date().timeIntervalSince1970)
+    
+    switch type {
+    case .hour:
+        timestamp /= 3600
+    case .minute:
+        timestamp /= 60
+    case .second:
+        break
+    case .timestamp:
+        break
+    }
+    
+    let random = timestamp % 6
+    
+    switch random {
+    case 0:
+        return .binary
+    case 1:
+        return .octal
+    case 2:
+        return .hex
+    case 3:
+        return .decimal
+    case 4:
+        return .roman
+    case 5:
+        return .random
+    default:
+        return .random
     }
 }

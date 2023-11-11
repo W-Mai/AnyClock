@@ -48,21 +48,33 @@ struct NumberEntryView : View {
                 || family == .accessoryInline{
                 switch entry.configuration.type {
                 case .hour:
-                    NumberView(num: component.hour!, showType: entry.configuration.showType)
+                    NumberView(num: component.hour!, 
+                               type: getRandomNumberTpyeByTimestamp(type: .hour),
+                               showType: entry.configuration.showType)
                 case .minute:
-                    NumberView(num: component.minute!, showType: entry.configuration.showType)
+                    NumberView(num: component.minute!,
+                               type: getRandomNumberTpyeByTimestamp(type: .minute),
+                               showType: entry.configuration.showType)
                 case .second:
-                    NumberView(num: component.second!, showType: entry.configuration.showType)
+                    NumberView(num: component.second!,
+                               type: getRandomNumberTpyeByTimestamp(type: .second),
+                               showType: entry.configuration.showType)
                 case .timestamp:
-                    NumberView(num: Int(entry.date.timeIntervalSince1970) as Int, showType: entry.configuration.showType)
+                    NumberView(num: Int(entry.date.timeIntervalSince1970) as Int, 
+                               type: getRandomNumberTpyeByTimestamp(type: .timestamp),
+                               showType: entry.configuration.showType)
                 }
             } else if family == .systemMedium 
                         || family ==  .systemLarge
                         || family == .systemExtraLarge
                         || family == .accessoryRectangular {
                 HStack {
-                    NumberView(num: component.hour!, showType: true)
-                    NumberView(num: component.minute!, showType: true)
+                    NumberView(num: component.hour!,
+                               type: getRandomNumberTpyeByTimestamp(type: .hour),
+                               showType: entry.configuration.showType)
+                    NumberView(num: component.minute!,
+                               type: getRandomNumberTpyeByTimestamp(type: .minute),
+                               showType: entry.configuration.showType)
                 }
             }
             
