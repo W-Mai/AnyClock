@@ -8,11 +8,26 @@
 import WidgetKit
 import AppIntents
 
-struct ConfigurationAppIntent: WidgetConfigurationIntent {
-    static var title: LocalizedStringResource = "Configuration"
-    static var description = IntentDescription("This is an example widget.")
+enum ClockNumberType: String, AppEnum {
+    case hour, minute, second, timestamp
+    
+    static var typeDisplayRepresentation: TypeDisplayRepresentation = "显示类型"
+    
+    static var caseDisplayRepresentations: [ClockNumberType : DisplayRepresentation] = [
+        .hour: "小时",
+        .minute: "分钟",
+        .second: "秒钟",
+        .timestamp: "时间戳"
+    ]
+}
 
-    // An example configurable parameter.
-    @Parameter(title: "Favorite Emoji", default: "😃")
-    var favoriteEmoji: String
+struct ConfigurationAppIntent: WidgetConfigurationIntent {
+    static var title: LocalizedStringResource = "设置"
+    static var description = IntentDescription("设置一下这个小组件的类型吧！")
+
+    @Parameter(title: "显示类型", default: .hour)
+    var type: ClockNumberType
+    
+    @Parameter(title: "是否显示数字类型", default: true)
+    var showType: Bool
 }

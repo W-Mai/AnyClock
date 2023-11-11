@@ -15,6 +15,9 @@
 		451C73102B0003E6007AC49B /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C730F2B0003E6007AC49B /* AppIntent.swift */; };
 		451C73122B0003E7007AC49B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 451C73112B0003E7007AC49B /* Assets.xcassets */; };
 		451C73172B0003E7007AC49B /* NumberExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 451C73042B0003E6007AC49B /* NumberExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		451C731D2B000660007AC49B /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B1E22AFFE4C200DA9353 /* NumberView.swift */; };
+		451C731E2B000663007AC49B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B1E42AFFE53E00DA9353 /* Utils.swift */; };
+		451C731F2B000B06007AC49B /* PixeloidSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4529B1DE2AFF77E100DA9353 /* PixeloidSans-Bold.ttf */; };
 		4529B1CE2AFF6F7400DA9353 /* AnyClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B1CD2AFF6F7400DA9353 /* AnyClockApp.swift */; };
 		4529B1D02AFF6F7400DA9353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B1CF2AFF6F7400DA9353 /* ContentView.swift */; };
 		4529B1D22AFF6F7400DA9353 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B1D12AFF6F7400DA9353 /* Item.swift */; };
@@ -115,10 +118,20 @@
 			path = Number;
 			sourceTree = "<group>";
 		};
+		451C731C2B00063E007AC49B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				4529B1E02AFF788000DA9353 /* Fonts */,
+				4529B1E22AFFE4C200DA9353 /* NumberView.swift */,
+				4529B1E42AFFE53E00DA9353 /* Utils.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		4529B1C12AFF6F7400DA9353 = {
 			isa = PBXGroup;
 			children = (
-				451C72FE2AFFFE76007AC49B /* SettingsView.swift */,
+				451C731C2B00063E007AC49B /* Shared */,
 				4529B1CC2AFF6F7400DA9353 /* AnyClock */,
 				451C730A2B0003E6007AC49B /* Number */,
 				451C73052B0003E6007AC49B /* Frameworks */,
@@ -139,15 +152,13 @@
 			isa = PBXGroup;
 			children = (
 				4529B1E12AFF799800DA9353 /* Info.plist */,
-				4529B1E02AFF788000DA9353 /* Fonts */,
+				451C72FE2AFFFE76007AC49B /* SettingsView.swift */,
 				4529B1CD2AFF6F7400DA9353 /* AnyClockApp.swift */,
 				4529B1CF2AFF6F7400DA9353 /* ContentView.swift */,
 				4529B1D12AFF6F7400DA9353 /* Item.swift */,
 				4529B1D32AFF6F7600DA9353 /* Assets.xcassets */,
 				4529B1D52AFF6F7600DA9353 /* AnyClock.entitlements */,
 				4529B1D62AFF6F7600DA9353 /* Preview Content */,
-				4529B1E22AFFE4C200DA9353 /* NumberView.swift */,
-				4529B1E42AFFE53E00DA9353 /* Utils.swift */,
 			);
 			path = AnyClock;
 			sourceTree = "<group>";
@@ -250,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				451C731F2B000B06007AC49B /* PixeloidSans-Bold.ttf in Resources */,
 				451C73122B0003E7007AC49B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,9 +283,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				451C731E2B000663007AC49B /* Utils.swift in Sources */,
 				451C730E2B0003E6007AC49B /* Number.swift in Sources */,
 				451C730C2B0003E6007AC49B /* NumberBundle.swift in Sources */,
 				451C73102B0003E6007AC49B /* AppIntent.swift in Sources */,
+				451C731D2B000660007AC49B /* NumberView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,13 +513,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AnyClock/AnyClock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"AnyClock/Preview Content\"";
 				DEVELOPMENT_TEAM = 3T73Y2T897;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnyClock/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -521,7 +536,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = studio.xclz.AnyClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -540,13 +555,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AnyClock/AnyClock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"AnyClock/Preview Content\"";
 				DEVELOPMENT_TEAM = 3T73Y2T897;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnyClock/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -562,7 +578,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = studio.xclz.AnyClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
