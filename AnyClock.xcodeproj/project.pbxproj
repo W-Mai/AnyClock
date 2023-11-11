@@ -27,6 +27,7 @@
 		4529B1E32AFFE4C200DA9353 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B1E22AFFE4C200DA9353 /* NumberView.swift */; };
 		4529B1E52AFFE53E00DA9353 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B1E42AFFE53E00DA9353 /* Utils.swift */; };
 		45D903342B002135005F49F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 451C73112B0003E7007AC49B /* Assets.xcassets */; };
+		45D903352B002C68005F49F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4529B1D32AFF6F7600DA9353 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -263,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				451C731F2B000B06007AC49B /* PixeloidSans-Bold.ttf in Resources */,
+				45D903352B002C68005F49F8 /* Assets.xcassets in Resources */,
 				451C73122B0003E7007AC49B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
