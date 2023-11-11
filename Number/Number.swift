@@ -21,10 +21,32 @@ struct Provider: AppIntentTimelineProvider {
         var entries: [SimpleEntry] = []
 
         let currentDate = Date()
-        for hourOffset in 0 ..< 3600 {
-            let entryDate = Calendar.current.date(byAdding: .second, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
+        
+        switch configuration.type {
+        case .hour:
+            for ofs in 0 ..< 3 {
+                let entryDate = Calendar.current.date(byAdding: .hour, value: ofs, to: currentDate)!
+                let entry = SimpleEntry(date: entryDate, configuration: configuration)
+                entries.append(entry)
+            }
+        case .minute:
+            for ofs in 0 ..< 180 {
+                let entryDate = Calendar.current.date(byAdding: .minute, value: ofs, to: currentDate)!
+                let entry = SimpleEntry(date: entryDate, configuration: configuration)
+                entries.append(entry)
+            }
+        case .second:
+            for ofs in 0 ..< 360 {
+                let entryDate = Calendar.current.date(byAdding: .second, value: ofs, to: currentDate)!
+                let entry = SimpleEntry(date: entryDate, configuration: configuration)
+                entries.append(entry)
+            }
+        case .timestamp:
+            for ofs in 0 ..< 360 {
+                let entryDate = Calendar.current.date(byAdding: .second, value: ofs, to: currentDate)!
+                let entry = SimpleEntry(date: entryDate, configuration: configuration)
+                entries.append(entry)
+            }
         }
 
         return Timeline(entries: entries, policy: .atEnd)
