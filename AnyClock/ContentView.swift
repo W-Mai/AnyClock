@@ -19,6 +19,14 @@ struct ContentView: View {
     @State var minuteType: RandomType = .decimal
     @State var secondType: RandomType = .decimal
     
+    @State var hourTypeNeedChange:   Bool = false
+    @State var minuteTypeNeedChange: Bool = false
+    @State var secondTypeNeedChange: Bool = false
+    
+    @State var houtShowType:   Bool = true
+    @State var minuteShowType: Bool = true
+    @State var secondShowType: Bool = true
+    
     @State var preHour:   Int = 0
     @State var preMinute: Int = 0
     @State var preSecond: Int = 0
@@ -35,13 +43,33 @@ struct ContentView: View {
                 HStack {
                     NumberView(num: hour,
                                type: hourType,
-                               showType: true)
+                               showType: houtShowType)
+                    .onTapGesture {
+                        hourTypeNeedChange = true
+                    }
+                    .onLongPressGesture {
+                        houtShowType.toggle()
+                    }
+                    
                     NumberView(num: minute,
                                type: minuteType,
-                               showType: true)
+                               showType: minuteShowType)
+                    .onTapGesture {
+                        minuteTypeNeedChange = true
+                    }
+                    .onLongPressGesture {
+                        minuteShowType.toggle()
+                    }
+                    
                     NumberView(num: second,
                                type: secondType,
-                               showType: true)
+                               showType: secondShowType)
+                    .onTapGesture {
+                        secondTypeNeedChange = true
+                    }
+                    .onLongPressGesture {
+                        secondShowType.toggle()
+                    }
                 }
                 .minimumScaleFactor(0.05)
                 Text("\(currTime.timeIntervalSince1970)")
@@ -54,16 +82,19 @@ struct ContentView: View {
                         minute  = components.minute!
                         second  = components.second!
                         
-                        if hour != preHour {
+                        if hourTypeNeedChange || hour != preHour {
                             hourType = choice([.decimal, .hex, .octal, .roman])
+                            hourTypeNeedChange = false
                         }
                         
-                        if minute != preMinute {
+                        if minuteTypeNeedChange || minute != preMinute {
                             minuteType = choice([.decimal, .hex, .octal, .roman])
+                            minuteTypeNeedChange = false
                         }
                         
-                        if second != preSecond {
+                        if secondTypeNeedChange || second != preSecond {
                             secondType = choice([.decimal, .hex, .octal, .roman, .random, .binary])
+                            secondTypeNeedChange = false
                         }
                         
                         preHour = hour
