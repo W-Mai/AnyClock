@@ -1,4 +1,6 @@
-# AnyClock 任意钟
+<img height="256" src="AnyClock/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x@2x.png" alt="AnyClock Logo" align="right"/>
+<div style="display: flex; justify-content: space-between; flex:8">
+<h1 align="left">AnyClock 任意钟</h1>
 
 <img src="snapshots/snapshot.png">
 
