@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		451C72FF2AFFFE76007AC49B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C72FE2AFFFE76007AC49B /* SettingsView.swift */; };
+		451C73072B0003E6007AC49B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451C73062B0003E6007AC49B /* WidgetKit.framework */; };
+		451C73092B0003E6007AC49B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451C73082B0003E6007AC49B /* SwiftUI.framework */; };
+		451C730C2B0003E6007AC49B /* NumberBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C730B2B0003E6007AC49B /* NumberBundle.swift */; };
+		451C730E2B0003E6007AC49B /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C730D2B0003E6007AC49B /* Number.swift */; };
+		451C73102B0003E6007AC49B /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C730F2B0003E6007AC49B /* AppIntent.swift */; };
+		451C73122B0003E7007AC49B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 451C73112B0003E7007AC49B /* Assets.xcassets */; };
+		451C73172B0003E7007AC49B /* NumberExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 451C73042B0003E6007AC49B /* NumberExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4529B1CE2AFF6F7400DA9353 /* AnyClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B1CD2AFF6F7400DA9353 /* AnyClockApp.swift */; };
 		4529B1D02AFF6F7400DA9353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B1CF2AFF6F7400DA9353 /* ContentView.swift */; };
 		4529B1D22AFF6F7400DA9353 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B1D12AFF6F7400DA9353 /* Item.swift */; };
@@ -18,8 +25,41 @@
 		4529B1E52AFFE53E00DA9353 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B1E42AFFE53E00DA9353 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		451C73152B0003E7007AC49B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4529B1C22AFF6F7400DA9353 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 451C73032B0003E6007AC49B;
+			remoteInfo = NumberExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		451C731B2B0003E7007AC49B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				451C73172B0003E7007AC49B /* NumberExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		451C72FE2AFFFE76007AC49B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		451C73042B0003E6007AC49B /* NumberExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NumberExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		451C73062B0003E6007AC49B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = /System/Library/Frameworks/WidgetKit.framework; sourceTree = "<absolute>"; };
+		451C73082B0003E6007AC49B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = /System/Library/Frameworks/SwiftUI.framework; sourceTree = "<absolute>"; };
+		451C730B2B0003E6007AC49B /* NumberBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberBundle.swift; sourceTree = "<group>"; };
+		451C730D2B0003E6007AC49B /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		451C730F2B0003E6007AC49B /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		451C73112B0003E7007AC49B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		451C73132B0003E7007AC49B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		451C73142B0003E7007AC49B /* Number.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Number.entitlements; sourceTree = "<group>"; };
 		4529B1CA2AFF6F7400DA9353 /* AnyClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4529B1CD2AFF6F7400DA9353 /* AnyClockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyClockApp.swift; sourceTree = "<group>"; };
 		4529B1CF2AFF6F7400DA9353 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +74,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		451C73012B0003E6007AC49B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				451C73092B0003E6007AC49B /* SwiftUI.framework in Frameworks */,
+				451C73072B0003E6007AC49B /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4529B1C72AFF6F7400DA9353 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -44,11 +93,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		451C73052B0003E6007AC49B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				451C73062B0003E6007AC49B /* WidgetKit.framework */,
+				451C73082B0003E6007AC49B /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		451C730A2B0003E6007AC49B /* Number */ = {
+			isa = PBXGroup;
+			children = (
+				451C730B2B0003E6007AC49B /* NumberBundle.swift */,
+				451C730D2B0003E6007AC49B /* Number.swift */,
+				451C730F2B0003E6007AC49B /* AppIntent.swift */,
+				451C73112B0003E7007AC49B /* Assets.xcassets */,
+				451C73132B0003E7007AC49B /* Info.plist */,
+				451C73142B0003E7007AC49B /* Number.entitlements */,
+			);
+			path = Number;
+			sourceTree = "<group>";
+		};
 		4529B1C12AFF6F7400DA9353 = {
 			isa = PBXGroup;
 			children = (
 				451C72FE2AFFFE76007AC49B /* SettingsView.swift */,
 				4529B1CC2AFF6F7400DA9353 /* AnyClock */,
+				451C730A2B0003E6007AC49B /* Number */,
+				451C73052B0003E6007AC49B /* Frameworks */,
 				4529B1CB2AFF6F7400DA9353 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				4529B1CA2AFF6F7400DA9353 /* AnyClock.app */,
+				451C73042B0003E6007AC49B /* NumberExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +171,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		451C73032B0003E6007AC49B /* NumberExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 451C73182B0003E7007AC49B /* Build configuration list for PBXNativeTarget "NumberExtension" */;
+			buildPhases = (
+				451C73002B0003E6007AC49B /* Sources */,
+				451C73012B0003E6007AC49B /* Frameworks */,
+				451C73022B0003E6007AC49B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NumberExtension;
+			productName = NumberExtension;
+			productReference = 451C73042B0003E6007AC49B /* NumberExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		4529B1C92AFF6F7400DA9353 /* AnyClock */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4529B1DB2AFF6F7600DA9353 /* Build configuration list for PBXNativeTarget "AnyClock" */;
@@ -104,10 +195,12 @@
 				4529B1C62AFF6F7400DA9353 /* Sources */,
 				4529B1C72AFF6F7400DA9353 /* Frameworks */,
 				4529B1C82AFF6F7400DA9353 /* Resources */,
+				451C731B2B0003E7007AC49B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				451C73162B0003E7007AC49B /* PBXTargetDependency */,
 			);
 			name = AnyClock;
 			productName = AnyClock;
@@ -124,6 +217,9 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					451C73032B0003E6007AC49B = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 					4529B1C92AFF6F7400DA9353 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -144,11 +240,20 @@
 			projectRoot = "";
 			targets = (
 				4529B1C92AFF6F7400DA9353 /* AnyClock */,
+				451C73032B0003E6007AC49B /* NumberExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		451C73022B0003E6007AC49B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				451C73122B0003E7007AC49B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4529B1C82AFF6F7400DA9353 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,6 +267,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		451C73002B0003E6007AC49B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				451C730E2B0003E6007AC49B /* Number.swift in Sources */,
+				451C730C2B0003E6007AC49B /* NumberBundle.swift in Sources */,
+				451C73102B0003E6007AC49B /* AppIntent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4529B1C62AFF6F7400DA9353 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,7 +292,91 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		451C73162B0003E7007AC49B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 451C73032B0003E6007AC49B /* NumberExtension */;
+			targetProxy = 451C73152B0003E7007AC49B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		451C73192B0003E7007AC49B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = Number/Number.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3T73Y2T897;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Number/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Number;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = studio.xclz.AnyClock.Number;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		451C731A2B0003E7007AC49B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = Number/Number.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3T73Y2T897;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Number/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Number;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = studio.xclz.AnyClock.Number;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		4529B1D92AFF6F7600DA9353 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -295,6 +494,7 @@
 		4529B1DC2AFF6F7600DA9353 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AnyClock/AnyClock.entitlements;
@@ -335,6 +535,7 @@
 		4529B1DD2AFF6F7600DA9353 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AnyClock/AnyClock.entitlements;
@@ -375,6 +576,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		451C73182B0003E7007AC49B /* Build configuration list for PBXNativeTarget "NumberExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				451C73192B0003E7007AC49B /* Debug */,
+				451C731A2B0003E7007AC49B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4529B1C52AFF6F7400DA9353 /* Build configuration list for PBXProject "AnyClock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
