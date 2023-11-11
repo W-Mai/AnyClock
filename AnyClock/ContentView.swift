@@ -31,6 +31,8 @@ struct ContentView: View {
     @State var minute: Int = 0
     @State var second: Int = 0
     
+    @State var settingViewShow: Bool = false
+    
     // Settings
     @AppStorage("HourShowType")     var hourShowType:   Bool = true
     @AppStorage("MinuteShowType")   var minuteShowType: Bool = true
@@ -107,10 +109,17 @@ struct ContentView: View {
                     }
                     .foregroundStyle(.white)
                     .font(.custom("PixeloidSans-Bold", size: 20))
-            }
-        }.onTapGesture(count: 2, perform: {
+            }.sheet(isPresented: $settingViewShow, content: {
+                SettingsView()
+            })
+        }
+        .onTapGesture(count: 2, perform: {
             showSecond.toggle()
         })
+        .onLongPressGesture {
+            settingViewShow = true
+        }
+        
     }
 }
 

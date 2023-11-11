@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		451C72FF2AFFFE76007AC49B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451C72FE2AFFFE76007AC49B /* SettingsView.swift */; };
 		4529B1CE2AFF6F7400DA9353 /* AnyClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B1CD2AFF6F7400DA9353 /* AnyClockApp.swift */; };
 		4529B1D02AFF6F7400DA9353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B1CF2AFF6F7400DA9353 /* ContentView.swift */; };
 		4529B1D22AFF6F7400DA9353 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4529B1D12AFF6F7400DA9353 /* Item.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		451C72FE2AFFFE76007AC49B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4529B1CA2AFF6F7400DA9353 /* AnyClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4529B1CD2AFF6F7400DA9353 /* AnyClockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyClockApp.swift; sourceTree = "<group>"; };
 		4529B1CF2AFF6F7400DA9353 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 		4529B1C12AFF6F7400DA9353 = {
 			isa = PBXGroup;
 			children = (
+				451C72FE2AFFFE76007AC49B /* SettingsView.swift */,
 				4529B1CC2AFF6F7400DA9353 /* AnyClock */,
 				4529B1CB2AFF6F7400DA9353 /* Products */,
 			);
@@ -166,6 +169,7 @@
 				4529B1E52AFFE53E00DA9353 /* Utils.swift in Sources */,
 				4529B1D02AFF6F7400DA9353 /* ContentView.swift in Sources */,
 				4529B1D22AFF6F7400DA9353 /* Item.swift in Sources */,
+				451C72FF2AFFFE76007AC49B /* SettingsView.swift in Sources */,
 				4529B1CE2AFF6F7400DA9353 /* AnyClockApp.swift in Sources */,
 				4529B1E32AFFE4C200DA9353 /* NumberView.swift in Sources */,
 			);
