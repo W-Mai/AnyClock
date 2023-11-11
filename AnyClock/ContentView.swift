@@ -23,10 +23,6 @@ struct ContentView: View {
     @State var minuteTypeNeedChange: Bool = false
     @State var secondTypeNeedChange: Bool = false
     
-    @State var houtShowType:   Bool = true
-    @State var minuteShowType: Bool = true
-    @State var secondShowType: Bool = true
-    
     @State var preHour:   Int = 0
     @State var preMinute: Int = 0
     @State var preSecond: Int = 0
@@ -35,7 +31,11 @@ struct ContentView: View {
     @State var minute: Int = 0
     @State var second: Int = 0
     
-    @State var showSecond: Bool = true
+    // Settings
+    @AppStorage("HourShowType")     var hourShowType:   Bool = true
+    @AppStorage("MinuteShowType")   var minuteShowType: Bool = true
+    @AppStorage("SecondShowType")   var secondShowType: Bool = true
+    @AppStorage("ShowSecond")       var showSecond:     Bool = true
     
     var body: some View {
         ZStack {
@@ -45,12 +45,12 @@ struct ContentView: View {
                 HStack {
                     NumberView(num: hour,
                                type: hourType,
-                               showType: houtShowType)
+                               showType: hourShowType)
                     .onTapGesture {
                         hourTypeNeedChange = true
                     }
                     .onLongPressGesture {
-                        houtShowType.toggle()
+                        hourShowType.toggle()
                     }
                     
                     NumberView(num: minute,
