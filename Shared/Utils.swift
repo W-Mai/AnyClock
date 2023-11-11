@@ -105,8 +105,8 @@ func convertNum(num: Int, type: RandomType) -> String {
     }
 }
 
-func getRandomNumberTpyeByTimestamp(type: ClockNumberType) -> RandomType {
-    var timestamp = Int(Date().timeIntervalSince1970)
+func getRandomNumberTpyeByTimestamp(date: Date, type: ClockNumberType) -> RandomType {
+    var timestamp = Int(date.timeIntervalSince1970)
     
     switch type {
     case .hour:
@@ -114,7 +114,7 @@ func getRandomNumberTpyeByTimestamp(type: ClockNumberType) -> RandomType {
     case .minute:
         timestamp /= 60
     case .second:
-        break
+        return choice([.binary, .octal, .hex, .decimal, .roman, .random])
     case .timestamp:
         break
     }

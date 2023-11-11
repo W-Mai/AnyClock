@@ -49,19 +49,19 @@ struct NumberEntryView : View {
                 switch entry.configuration.type {
                 case .hour:
                     NumberView(num: component.hour!, 
-                               type: getRandomNumberTpyeByTimestamp(type: .hour),
+                               type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .hour),
                                showType: entry.configuration.showType)
                 case .minute:
                     NumberView(num: component.minute!,
-                               type: getRandomNumberTpyeByTimestamp(type: .minute),
+                               type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .minute),
                                showType: entry.configuration.showType)
                 case .second:
                     NumberView(num: component.second!,
-                               type: getRandomNumberTpyeByTimestamp(type: .second),
+                               type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .second),
                                showType: entry.configuration.showType)
                 case .timestamp:
                     NumberView(num: Int(entry.date.timeIntervalSince1970) as Int, 
-                               type: getRandomNumberTpyeByTimestamp(type: .timestamp),
+                               type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .timestamp),
                                showType: entry.configuration.showType)
                 }
             } else if family == .systemMedium 
@@ -70,10 +70,10 @@ struct NumberEntryView : View {
                         || family == .accessoryRectangular {
                 HStack {
                     NumberView(num: component.hour!,
-                               type: getRandomNumberTpyeByTimestamp(type: .hour),
+                               type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .hour),
                                showType: entry.configuration.showType)
                     NumberView(num: component.minute!,
-                               type: getRandomNumberTpyeByTimestamp(type: .minute),
+                               type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .minute),
                                showType: entry.configuration.showType)
                 }
             }
@@ -85,6 +85,7 @@ struct NumberEntryView : View {
 }
 
 struct Number: Widget {
+    @Environment(\.widgetFamily) var family: WidgetFamily
     let kind: String = "Number"
 
     var body: some WidgetConfiguration {
