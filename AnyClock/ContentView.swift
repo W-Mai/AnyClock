@@ -38,6 +38,7 @@ struct ContentView: View {
     @AppStorage("MinuteShowType")   var minuteShowType: Bool = true
     @AppStorage("SecondShowType")   var secondShowType: Bool = true
     @AppStorage("ShowSecond")       var showSecond:     Bool = true
+    @AppStorage("ShowTimestamp")    var showTimestamp:  Bool = true
     
     var body: some View {
         ZStack {
@@ -78,37 +79,40 @@ struct ContentView: View {
                     }
                 }
                 .minimumScaleFactor(0.05)
-                Text("\(currTime.timeIntervalSince1970)")
-                    .onReceive(Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()) { _ in
-                        currTime = Date()
-                        
-                        let components = getLocalTime(date: currTime)
-                        
-                        hour    = components.hour!
-                        minute  = components.minute!
-                        second  = components.second!
-                        
-                        if hourTypeNeedChange || hour != preHour {
-                            hourType = choice([.decimal, .hex, .octal, .roman])
-                            hourTypeNeedChange = false
-                        }
-                        
-                        if minuteTypeNeedChange || minute != preMinute {
-                            minuteType = choice([.decimal, .hex, .octal, .roman])
-                            minuteTypeNeedChange = false
-                        }
-                        
-                        if secondTypeNeedChange || second != preSecond {
-                            secondType = choice([.decimal, .hex, .octal, .roman, .random, .binary])
-                            secondTypeNeedChange = false
-                        }
-                        
-                        preHour = hour
-                        preMinute = minute
-                        preSecond = second
+                .onReceive(Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()) { _ in
+                    currTime = Date()
+                    
+                    let components = getLocalTime(date: currTime)
+                    
+                    hour    = components.hour!
+                    minute  = components.minute!
+                    second  = components.second!
+                    
+                    if hourTypeNeedChange || hour != preHour {
+                        hourType = choice([.decimal, .hex, .octal, .roman])
+                        hourTypeNeedChange = false
                     }
-                    .foregroundStyle(.white)
-                    .font(.custom("PixeloidSans-Bold", size: 20))
+                    
+                    if minuteTypeNeedChange || minute != preMinute {
+                        minuteType = choice([.decimal, .hex, .octal, .roman])
+                        minuteTypeNeedChange = false
+                    }
+                    
+                    if secondTypeNeedChange || second != preSecond {
+                        secondType = choice([.decimal, .hex, .octal, .roman, .random, .binary])
+                        secondTypeNeedChange = false
+                    }
+                    
+                    preHour = hour
+                    preMinute = minute
+                    preSecond = second
+                }
+                
+                if showTimestamp {
+                    Text("\(currTime.timeIntervalSince1970)")
+                        .foregroundStyle(.white)
+                        .font(.custom("PixeloidSans-Bold", size: 20))
+                }
             }.sheet(isPresented: $settingViewShow, content: {
                 SettingsView()
             })
