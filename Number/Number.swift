@@ -47,6 +47,24 @@ struct Provider: AppIntentTimelineProvider {
                 let entry = SimpleEntry(date: entryDate, configuration: configuration)
                 entries.append(entry)
             }
+        case .hourminute:
+            for ofs in 0 ..< 180 {
+                let entryDate = Calendar.current.date(byAdding: .minute, value: ofs, to: currentDate)!
+                let entry = SimpleEntry(date: entryDate, configuration: configuration)
+                entries.append(entry)
+            }
+        case .minutesecond:
+            for ofs in 0 ..< 360 {
+                let entryDate = Calendar.current.date(byAdding: .second, value: ofs, to: currentDate)!
+                let entry = SimpleEntry(date: entryDate, configuration: configuration)
+                entries.append(entry)
+            }
+        case .hourminutesecond:
+            for ofs in 0 ..< 360 {
+                let entryDate = Calendar.current.date(byAdding: .second, value: ofs, to: currentDate)!
+                let entry = SimpleEntry(date: entryDate, configuration: configuration)
+                entries.append(entry)
+            }
         }
 
         return Timeline(entries: entries, policy: .atEnd)
@@ -61,48 +79,101 @@ struct SimpleEntry: TimelineEntry {
 struct NumberEntryView : View {
     @Environment(\.widgetFamily) var family: WidgetFamily
     var entry: Provider.Entry
-
+    
     var body: some View {
         let component = getLocalTime(date: entry.date)
         
         VStack {
-            if family == .systemSmall 
-                || family == .accessoryInline{
-                switch entry.configuration.type {
-                case .hour:
-                    NumberView(num: component.hour!, 
-                               type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .hour),
-                               showType: entry.configuration.showType)
-                case .minute:
-                    NumberView(num: component.minute!,
-                               type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .minute),
-                               showType: entry.configuration.showType)
-                case .second:
-                    NumberView(num: component.second!,
-                               type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .second),
-                               showType: entry.configuration.showType)
-                case .timestamp:
-                    NumberView(num: Int(entry.date.timeIntervalSince1970) as Int, 
-                               type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .timestamp),
-                               showType: entry.configuration.showType)
+            switch entry.configuration.type {
+            case .hour:
+                NumberView(num: component.hour!,
+                           type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .hour),
+                           showType: entry.configuration.showType)
+            case .minute:
+                NumberView(num: component.minute!,
+                           type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .minute),
+                           showType: entry.configuration.showType)
+            case .second:
+                NumberView(num: component.second!,
+                           type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .second),
+                           showType: entry.configuration.showType)
+            case .timestamp:
+                NumberView(num: Int(entry.date.timeIntervalSince1970) as Int,
+                           type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .timestamp),
+                           showType: entry.configuration.showType)
+            case .hourminute:
+                if family == .systemSmall
+                    || family == .accessoryInline{
+                    VStack {
+                        NumberView(num: component.hour!,
+                                   type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .hour),
+                                   showType: entry.configuration.showType)
+                        NumberView(num: component.minute!,
+                                   type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .minute),
+                                   showType: entry.configuration.showType)
+                    }
+                } else {
+                    HStack {
+                        NumberView(num: component.hour!,
+                                   type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .hour),
+                                   showType: entry.configuration.showType)
+                        NumberView(num: component.minute!,
+                                   type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .minute),
+                                   showType: entry.configuration.showType)
+                    }
                 }
-            } else if family == .systemMedium 
-                        || family ==  .systemLarge
-                        || family == .systemExtraLarge
-                        || family == .accessoryRectangular {
-                HStack {
-                    NumberView(num: component.hour!,
-                               type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .hour),
-                               showType: entry.configuration.showType)
-                    NumberView(num: component.minute!,
-                               type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .minute),
-                               showType: entry.configuration.showType)
+            case .minutesecond:
+                if family == .systemSmall
+                    || family == .accessoryInline{
+                    VStack {
+                        NumberView(num: component.minute!,
+                                   type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .minute),
+                                   showType: entry.configuration.showType)
+                        NumberView(num: component.second!,
+                                   type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .second),
+                                   showType: entry.configuration.showType)
+                    }
+                } else {
+                    HStack {
+                        NumberView(num: component.minute!,
+                                   type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .minute),
+                                   showType: entry.configuration.showType)
+                        NumberView(num: component.second!,
+                                   type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .second),
+                                   showType: entry.configuration.showType)
+                    }
+                }
+            case .hourminutesecond:
+                if family == .systemSmall
+                    || family == .accessoryInline{
+                    VStack {
+                        NumberView(num: component.hour!,
+                                   type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .hour),
+                                   showType: entry.configuration.showType)
+                        NumberView(num: component.minute!,
+                                   type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .minute),
+                                   showType: entry.configuration.showType)
+                        NumberView(num: component.second!,
+                                   type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .second),
+                                   showType: entry.configuration.showType)
+                    }
+                } else {
+                    HStack {
+                        NumberView(num: component.hour!,
+                                   type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .hour),
+                                   showType: entry.configuration.showType)
+                        NumberView(num: component.minute!,
+                                   type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .minute),
+                                   showType: entry.configuration.showType)
+                        NumberView(num: component.second!,
+                                   type: getRandomNumberTpyeByTimestamp(date: entry.date, type: .second),
+                                   showType: entry.configuration.showType)
+                    }
                 }
             }
-            
-        }.padding(8)
-            .minimumScaleFactor(0.05)
-        
+        }
+        .padding(8)
+        .minimumScaleFactor(0.05)
     }
 }
 

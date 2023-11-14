@@ -42,8 +42,6 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color.black.ignoresSafeArea()
-            
             VStack {
                 HStack {
                     NumberView(num: hour,

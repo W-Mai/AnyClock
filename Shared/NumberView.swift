@@ -16,8 +16,8 @@ struct NumberView: View {
         ZStack(alignment: .bottomTrailing){
             VStack {
                 Text(convertNum(num:num, type: type))
-                    .foregroundStyle(.white)
-                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                    .foregroundStyle(.primary)
+//                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                     .font(.custom("PixeloidSans-Bold", size: 200))
             }
             .padding(8)
@@ -26,6 +26,7 @@ struct NumberView: View {
                 Text("\(type.rawValue)")
                     .foregroundStyle(.gray)
                     .font(.custom("PixeloidSans-Bold", size: 16))
+                    .minimumScaleFactor(0.05)
             }
         }
 //        .aspectRatio(1, contentMode: .fill)

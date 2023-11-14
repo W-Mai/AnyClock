@@ -18,7 +18,7 @@ enum RandomType: String {
 }
 
 enum ClockNumberType: String, AppEnum {
-    case hour, minute, second, timestamp
+    case hour, minute, second, hourminute, minutesecond, hourminutesecond, timestamp
     
     static var typeDisplayRepresentation: TypeDisplayRepresentation = "显示类型"
     
@@ -26,6 +26,9 @@ enum ClockNumberType: String, AppEnum {
         .hour: "小时",
         .minute: "分钟",
         .second: "秒钟",
+        .hourminute: "小时:分钟",
+        .minutesecond: "分钟:秒钟",
+        .hourminutesecond: "小时:分钟:秒钟",
         .timestamp: "时间戳"
     ]
 }
@@ -117,9 +120,15 @@ func getRandomNumberTpyeByTimestamp(date: Date, type: ClockNumberType) -> Random
         return choice([.binary, .octal, .hex, .decimal, .roman, .random])
     case .timestamp:
         break
+    case .hourminute:
+        timestamp /= 60
+    case .minutesecond:
+        timestamp /= 3600
+    case .hourminutesecond:
+        timestamp /= 3600
     }
     
-    let random = timestamp % 6
+    let random = timestamp % 5
     
     switch random {
     case 0:
@@ -132,9 +141,7 @@ func getRandomNumberTpyeByTimestamp(date: Date, type: ClockNumberType) -> Random
         return .decimal
     case 4:
         return .roman
-    case 5:
-        return .random
     default:
-        return .random
+        return .decimal
     }
 }
